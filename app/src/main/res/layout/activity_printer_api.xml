@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkPrinterStatus"
+            android:text="检查打印机状态"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_printerStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打印机状态:" />
+
+        <EditText
+            android:id="@+id/edt_textContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入需要打印的文本" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printText"
+            android:text="打印文本"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/change" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printPic"
+            android:text="打印图片"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/edt_printBarCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入需要打印的条形码内容" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printBarCode"
+            android:text="打印条形码"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/edt_printQrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入需要打印的二维码内容" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printQrCode"
+            android:text="打印二维码"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="endPrint"
+            android:text="结束打印"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printSelfTest"
+            android:text="打印自检页"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

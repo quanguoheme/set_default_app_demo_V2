@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- 第1组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_get_serial_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getSerialNumber"
+                android:text="Get Serial Number"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_SerialNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Serial Number:"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- 第2组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_hide_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="hide_navigation"
+                android:text="Hide Navigation Bar"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_show_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="show_navigation"
+                android:text="Show Navigation Bar"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- 第3组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The installed APK should be named test.apk and placed in the root directory"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_install_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="install_app"
+                android:text="Silent Install APK"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/edt_appPackageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the package name of the app to uninstall"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_uninstall_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="unInstall_app"
+                android:text="Silent Uninstall APK"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- 第4组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:background="@drawable/border_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btn_set_default_app"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="set_default_app"
+                    android:text="Set Default App"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#3F51B5"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btn_set_default_app_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="set_default_app_name"
+                    android:text="Set EditText Example"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#3F51B5"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btn_clear_default_app_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="clear_default_app_name"
+                    android:text="Clear Default App"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#3F51B5" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edt_default_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the package name of the app to set default app"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- 第5组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_reboot_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="reboot"
+                android:text="Reboot Device"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- 第6组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/edt_packageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the package name of the app to keep alive"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/edt_appActivityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the full path name of the app's launch activity"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_add_alive_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addAliveApp"
+                android:text="Add Keep-Alive App"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_AliveApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="note:The Alive function changes will only take effect after a reboot."
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_clear_alive_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clearAliveApp"
+                android:text="Clear Keep-Alive Apps"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+
+        <!-- 第6组按钮 -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="note:Enter and Exit Sleep Mode Test: After clicking start, it will detect whether charging is in progress. If not charging, it will enter sleep mode and automatically wake up when charging begins."
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_begin_sleep_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_begin_sleep_test"
+                android:text="begin_sleep_test"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="8dp" />
+
+
+        </LinearLayout>
+
+
+        <!-- 截图 -->
+        <Button
+            android:id="@+id/btn_screenshot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="screenCap"
+            android:text="Take Screenshot"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3F51B5"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>
