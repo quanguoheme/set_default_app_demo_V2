@@ -154,7 +154,7 @@ public class DeviceAPIActivity extends AppCompatActivity {
     private void set_default_app_proc(String appPackageName) {
         String cmd="setprop persist.defaultgc.homeapp "+appPackageName;
         Log.d(TAG,"__set_default_app : "+cmd);
-        YFactoryApi.execFor7(cmd);
+        DeviceAPIManager.system_run_cmd(cmd);
     }
 
     public void reboot(View view) {
