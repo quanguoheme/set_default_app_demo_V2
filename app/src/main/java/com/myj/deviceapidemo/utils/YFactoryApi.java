@@ -106,6 +106,7 @@ public class YFactoryApi {
                 if (inputStream != null) {
                     inputStream.close();
                 }
+
                 if (outputStream != null) {
                     outputStream.flush();
 

@@ -30,6 +30,7 @@ public class DeviceAPIActivity extends AppCompatActivity {
     private EditText edtAppPackageName;
     private EditText edtPackageName;
     private EditText edtAppActivityName;
+    private EditText edtRunCmd;
     private TextView tvAliveApp;
     public static String TAG="batt2";
     Context context;
@@ -41,6 +42,7 @@ public class DeviceAPIActivity extends AppCompatActivity {
         edtAppPackageName = findViewById(R.id.edt_appPackageName);
         edtPackageName = findViewById(R.id.edt_packageName);
         edtAppActivityName = findViewById(R.id.edt_appActivityName);
+        edtRunCmd = findViewById(R.id.edt_run_cmd);
         tvAliveApp = findViewById(R.id.tv_AliveApp);
         context=this.getApplicationContext();
        // ClassUtils.init_my_IDeviceApiManager(this.getApplicationContext());
@@ -76,26 +78,20 @@ public class DeviceAPIActivity extends AppCompatActivity {
 
 
     public void install_app(View view) {
-        String fil_path=  ("/sdcard" + "/test.apk");
-        File fil= new File(fil_path);
-        String cmd= "pm install -i com.android.server -r "+fil_path;
-        if(!fil.exists())
-        {
-            String path_inter=context.getFilesDir()+"dd.apk" ;
+       // String fil_path=  ("/sdcard" + "/test.apk");
+        String fil_path=  (  Environment.getExternalStorageDirectory()+ "/test.apk");
 
-            YFactoryApi.copyRawFileToPath(this,R.raw.term,path_inter);
-            YFactoryApi.execFor7("cp "+path_inter +" "+fil_path );
-        }
+        File fil= new File(fil_path);
 
         if(!fil.exists())
         {
             Log.d(TAG,"install_app fail nofile exist  ");
             return;
         }
+        fil_path=  ("/data/media/0" + "/test.apk");
+        Log.d(TAG,"install_app "+fil_path);
 
-        Log.d(TAG,"install_app "+cmd);
-        YFactoryApi.execFor7(cmd);
-       // DeviceAPIManager.install_app(Environment.getExternalStorageDirectory() + "/test.apk");
+        DeviceAPIManager.install_app(fil_path);
     }
 
     public void unInstall_app(View view) {
@@ -105,13 +101,13 @@ public class DeviceAPIActivity extends AppCompatActivity {
         }
         String cmd= "pm uninstall "+ appPackageName;
         Log.d(TAG,"unInstall_app "+cmd);
-        YFactoryApi.execFor7(cmd);
+       // YFactoryApi.execFor7(cmd);
 
        /* String appPackageName = edtAppPackageName.getText().toString();
         if (TextUtils.isEmpty(appPackageName)) {
             return;
-        }
-        DeviceAPIManager.unInstall_app(appPackageName);*/
+        }*/
+        DeviceAPIManager.unInstall_app(appPackageName);
     }
     public void hide_navigation(View view) {
         Log.d(TAG," DeviceAPIManager.hide_navigation(); ");
@@ -200,6 +196,14 @@ public class DeviceAPIActivity extends AppCompatActivity {
     public void screenCap(View view) {
         String path = Environment.getExternalStorageDirectory() + "/" + System.currentTimeMillis() + ".png";
         DeviceAPIManager.screenCap(path);
+    }
+
+    public void runCmd(View view) {
+        String cmd = edtRunCmd.getText().toString();
+        if (TextUtils.isEmpty(cmd)) {
+            return;
+        }
+        DeviceAPIManager.system_run_cmd(cmd);
     }
 
     public void show_reboot_Dialog() {

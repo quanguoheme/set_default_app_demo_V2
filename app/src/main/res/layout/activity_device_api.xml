@@ -275,6 +275,42 @@
         </LinearLayout>
 
 
+        <!-- Run Command -->
+        <LinearLayout
+            android:background="@drawable/border_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/edt_run_cmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter command"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_run_cmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="runCmd"
+                android:text="Run Command"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3F51B5"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_run_cmd_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Run Command"
+                android:textAlignment="center"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
         <!-- 截图 -->
         <Button
             android:id="@+id/btn_screenshot"
