@@ -69,6 +69,7 @@
 
         <!-- 第3组按钮 -->
         <LinearLayout
+            android:visibility="gone"
             android:background="@drawable/border_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,6 +160,31 @@
                     android:text="Clear Default App"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#3F51B5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tv_open_boot_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enable this app to start on boot"
+                    android:textAlignment="center"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp" />
+
+                <Switch
+                    android:id="@+id/switch_open_boot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Boot Start"
+                    android:padding="8dp" />
             </LinearLayout>
 
             <EditText

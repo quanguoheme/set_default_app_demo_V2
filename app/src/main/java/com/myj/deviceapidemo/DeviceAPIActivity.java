@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +32,9 @@ public class DeviceAPIActivity extends AppCompatActivity {
     private EditText edtPackageName;
     private EditText edtAppActivityName;
     private EditText edtRunCmd;
+    private Switch switchOpenBoot;
     private TextView tvAliveApp;
-    public static String TAG="batt2";
+    public static String TAG="dd3";
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,9 @@ public class DeviceAPIActivity extends AppCompatActivity {
         edtPackageName = findViewById(R.id.edt_packageName);
         edtAppActivityName = findViewById(R.id.edt_appActivityName);
         edtRunCmd = findViewById(R.id.edt_run_cmd);
+        switchOpenBoot = findViewById(R.id.switch_open_boot);
+        switchOpenBoot.setChecked(App.isOpenBootEnabled());
+        switchOpenBoot.setOnCheckedChangeListener((buttonView, isChecked) -> set_my_app_boot(isChecked));
         tvAliveApp = findViewById(R.id.tv_AliveApp);
         context=this.getApplicationContext();
        // ClassUtils.init_my_IDeviceApiManager(this.getApplicationContext());
@@ -50,6 +55,21 @@ public class DeviceAPIActivity extends AppCompatActivity {
         DelayTaskUtil.init();
     }
 
+    void set_my_app_boot(boolean isChecked)
+    {
+        App.setOpenBootEnabled(isChecked);
+        String packageName = getPackageName();
+        Log.d("dd3","set_my_app_boot "+packageName+",isChecked:"+isChecked);
+        if(isChecked)
+        {
+            set_default_app_proc("com.example.normal.mytestapplication");
+        }
+        else {
+            set_default_app_proc("\"\"");
+        }
+
+
+    }
     public void getSerialNumber(View view) {
         String serialNumber = DeviceAPIManager.getSerialNumber();
         Log.d(TAG,"serialNumber 1 :"+serialNumber);
@@ -152,7 +172,7 @@ public class DeviceAPIActivity extends AppCompatActivity {
     }
 
     private void set_default_app_proc(String appPackageName) {
-        String cmd="setprop persist.defaultgc.homeapp "+appPackageName;
+        String cmd="setprop persist.defaultgc.homeapp  "+appPackageName;
         Log.d(TAG,"__set_default_app : "+cmd);
         DeviceAPIManager.system_run_cmd(cmd);
     }
