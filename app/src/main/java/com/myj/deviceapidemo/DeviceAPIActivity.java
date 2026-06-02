@@ -80,7 +80,7 @@ public class DeviceAPIActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         TextView tvSerialNumber = findViewById(R.id.tv_SerialNumber);
-        tvSerialNumber.setText("序列号1:" + serialNumber);
+        tvSerialNumber.setText("SN : " + serialNumber);
     }
 
     public void app_go_to_exception(View view) {
