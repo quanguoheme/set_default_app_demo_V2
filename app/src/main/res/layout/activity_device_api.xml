@@ -273,7 +273,7 @@
 
         <!-- 第6组按钮 -->
         <LinearLayout
-            android:visibility="gone"
+            android:visibility="visible"
             android:background="@drawable/border_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

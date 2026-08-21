@@ -310,11 +310,11 @@ public class DeviceAPIActivity extends AppCompatActivity {
                         DelayTaskUtil.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Log.d(TAG, " jason2 ,  enable is_sleep_status2  end_enter_sleep  "  );
+                                Log.d(TAG, " jason2 ,10_000  system_enter_sleep_mode "  );
                                 DeviceAPIManager.system_enter_sleep_mode();
                                 is_sleep_status =true;
                             }
-                        }, 10_000); // 3000毫秒=3秒
+                        }, 1_000); // 3000毫秒=3秒
 
 
                     }
